@@ -1,0 +1,82 @@
+name: RAG Eval Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  eval-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run RAGAS evaluation
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python phase-a/run_ragas.py
+
+      - name: Check SLO thresholds
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python - <<'EOF'
+          import json, sys
+
+          with open("phase-a/ragas_summary.json") as f:
+              data = json.load(f)
+
+          scores = data["aggregate"]
+          slo_pass = data.get("slo_pass", {})
+
+          THRESHOLDS = {
+              "faithfulness":      0.85,
+              "answer_relevancy":  0.80,
+              "context_precision": 0.75,
+              "context_recall":    0.75,
+          }
+
+          print("=" * 55)
+          print("EVAL GATE — SLO CHECK")
+          print("=" * 55)
+          failed = []
+          for metric, threshold in THRESHOLDS.items():
+              score = scores.get(metric, 0.0)
+              status = "PASS" if score >= threshold else "FAIL"
+              print(f"  [{status}] {metric:<24} {score:.4f}  (≥ {threshold})")
+              if score < threshold:
+                  failed.append(f"{metric}={score:.4f} < {threshold}")
+          print("=" * 55)
+
+          if failed:
+              print(f"\nGATE FAILED: {', '.join(failed)}")
+              sys.exit(1)
+          else:
+              print("\nAll SLOs PASSED — merge allowed.")
+          EOF
+
+      - name: Upload eval artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ragas-results-${{ github.run_number }}
+          path: |
+            phase-a/ragas_results.csv
+            phase-a/ragas_summary.json
+          retention-days: 30
