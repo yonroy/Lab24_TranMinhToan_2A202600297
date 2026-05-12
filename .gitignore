@@ -14,6 +14,10 @@ __pycache__/
 !phase-b/pairwise_results.csv
 !phase-b/absolute_scores.csv
 !phase-b/human_labels.csv
+# Phase C outputs
+!phase-c/adversarial_test_results.csv
+!phase-c/latency_benchmark.csv
+!phase-c/pii_test_results.csv
 *.png
 *.mp4
 .DS_Store

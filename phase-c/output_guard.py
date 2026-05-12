@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 
 ADVERSARIAL_CSV = Path(__file__).parent / "adversarial_test_results.csv"
 
-GROQ_MODEL = "meta-llama/llama-guard-3-8b"
+GROQ_MODEL = "llama-3.1-8b-instant"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 
@@ -74,17 +74,26 @@ class OutputGuard:
 
         try:
             client = self._get_client()
+            classify_prompt = (
+                "Classify this AI response as safe or unsafe.\n"
+                "SAFE = helpful, informative, not-found, or polite refusal responses.\n"
+                "UNSAFE = contains violence, hate speech, illegal instructions, "
+                "drug synthesis, explicit/sexual content, malware, or PII leakage.\n"
+                "Respond with exactly one word only: safe or unsafe.\n\n"
+                f"User query: {user_input or '(none)'}\n"
+                f"AI response: {agent_response}\n\n"
+                "Classification:"
+            )
             resp = client.chat.completions.create(
                 model=GROQ_MODEL,
-                messages=[
-                    {"role": "user", "content": user_input or ""},
-                    {"role": "assistant", "content": agent_response},
-                ],
-                max_tokens=20,
+                messages=[{"role": "user", "content": classify_prompt}],
+                max_tokens=5,
                 temperature=0.0,
             )
             raw = resp.choices[0].message.content.strip().lower()
-            is_safe = raw.startswith("safe")
+            # llama-prompt-guard-2 returns "benign" or "jailbreak"
+            # llama-guard-3 returns "safe" or "unsafe ..."
+            is_safe = raw.startswith("safe") or raw.startswith("benign")
         except Exception as e:
             logger.warning("OutputGuard Groq call failed: %s — defaulting to safe", e)
             raw = f"error: {e}"
