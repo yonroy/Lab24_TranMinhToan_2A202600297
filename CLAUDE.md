@@ -26,13 +26,53 @@ Lab: AICB-P2T3 · Day 24 · VinUniversity.
 ## Cấu trúc quan trọng
 ```
 Lab24_TranMinhToan/
-├── rag/                ← RAG Day 18 + adapter.py interface
-├── phase-a/            ← RAGAS eval pipeline
-├── phase-b/            ← LLM-as-Judge + bias analysis
-├── phase-c/            ← Guardrails (input_guard, output_guard, full_pipeline)
-├── phase-d/            ← blueprint.md production document
-├── .github/workflows/  ← eval-gate.yml CI/CD
-└── CLAUDE.md
+├── config.py                           # API keys + paths + hyperparams
+├── README.md                           # Overview 200-300 từ
+├── requirements.txt
+├── prompts.md                          # AI prompts đã dùng (academic integrity)
+│
+├── rag/                                # RAG Day 18 (kế thừa)
+│   ├── adapter.py                      # build() + my_rag_pipeline() — interface chuẩn
+│   ├── pipeline.py
+│   ├── m1_chunking.py
+│   ├── m2_search.py
+│   ├── m3_rerank.py
+│   ├── m4_eval.py
+│   └── m5_enrichment.py
+│
+├── phase-a/                            # RAGAS Evaluation
+│   ├── generate_testset.py             # ← code: sinh 50 Q/A pairs
+│   ├── run_ragas.py                    # ← code: 4 metrics evaluation
+│   ├── testset_v1.csv                  # output
+│   ├── testset_review_notes.md         # output (manual review)
+│   ├── ragas_results.csv               # output
+│   ├── ragas_summary.json              # output
+│   └── failure_analysis.md            # output (cluster analysis)
+│
+├── phase-b/                            # LLM-as-Judge
+│   ├── judge_pipeline.py               # ← code: pairwise + absolute scoring
+│   ├── kappa_analysis.py               # ← code: kappa + bias analysis
+│   ├── pairwise_results.csv            # output
+│   ├── absolute_scores.csv             # output
+│   ├── human_labels.csv                # output (fill manually)
+│   └── judge_bias_report.md           # output
+│
+├── phase-c/                            # Guardrails
+│   ├── input_guard.py                  # ← code: PII + topic validation
+│   ├── output_guard.py                 # ← code: Llama Guard 3 via Groq
+│   ├── full_pipeline.py                # ← code: async L1+L2+L3+L4
+│   ├── pii_test_results.csv            # output
+│   ├── adversarial_test_results.csv    # output
+│   └── latency_benchmark.csv          # output
+│
+├── phase-d/
+│   └── blueprint.md                    # production blueprint (hoặc .pdf)
+│
+├── .github/workflows/
+│   └── eval-gate.yml                   # CI/CD threshold gate
+│
+└── demo/
+    └── demo-video.mp4                  # hoặc YouTube link trong README
 ```
 
 ---
