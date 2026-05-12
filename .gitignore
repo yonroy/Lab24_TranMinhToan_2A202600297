@@ -6,6 +6,10 @@ __pycache__/
 *.csv
 *.json
 !test_set.json
+# Phase A outputs
+!phase-a/testset_v1.csv
+!phase-a/ragas_results.csv
+!phase-a/ragas_summary.json
 *.png
 *.mp4
 .DS_Store

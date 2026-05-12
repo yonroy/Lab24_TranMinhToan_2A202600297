@@ -1,0 +1,117 @@
+{
+  "aggregate": {
+    "faithfulness": 0.6333,
+    "answer_relevancy": 0.3666,
+    "context_precision": 0.8638,
+    "context_recall": 0.5472
+  },
+  "num_questions": 52,
+  "slo_pass": {
+    "faithfulness": false,
+    "answer_relevancy": false,
+    "context_precision": true,
+    "context_recall": false
+  },
+  "failures": [
+    {
+      "question": "Giới tính là gì trong dữ liệu cá nhân?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.0,
+        "context_recall": 0.0
+      }
+    },
+    {
+      "question": "What actions are prohibited under Điều 8 regarding personal data processing?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.0,
+        "context_recall": 0.0
+      }
+    },
+    {
+      "question": "What are the financial sources outlined in Điều 31 for ensuring the operation of personal data protection?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.0,
+        "context_recall": 0.0
+      }
+    },
+    {
+      "question": "Quốc tịch là gì trong dữ liệu cá nhân và nó có vai trò gì trong việc xác định một con người cụ thể?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.0,
+        "context_recall": 0.5
+      }
+    },
+    {
+      "question": "What are the requirements for transferring personal data of Vietnamese citizens abroad?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.0,
+        "context_recall": 0.5
+      }
+    },
+    {
+      "question": "What are the rights and obligations of the data subject as outlined in the context regarding Bên Kiểm soát dữ liệu cá nhân?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.8333333332916666,
+        "context_recall": 0.0
+      }
+    },
+    {
+      "question": "How does the Bộ luật Dân sự relate to the rights and obligations of data subjects in the context of personal data protection?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.9999999999666667,
+        "context_recall": 0.0
+      }
+    },
+    {
+      "question": "What are the requirements for transferring personal data of Vietnamese citizens abroad according to the regulations?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.9999999999,
+        "context_recall": 0.2222222222222222
+      }
+    },
+    {
+      "question": "What are the main regulations established by the CHÍNH PHỦ regarding personal data protection in Vietnam?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.8333333332916666,
+        "context_recall": 0.5
+      }
+    },
+    {
+      "question": "What responsibilities does the government have regarding personal data protection?",
+      "worst_metric": "faithfulness",
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.9999999999,
+        "context_recall": 0.5
+      }
+    }
+  ]
+}

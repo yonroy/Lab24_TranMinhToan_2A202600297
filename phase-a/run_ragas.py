@@ -9,6 +9,7 @@ Usage:
 
 from __future__ import annotations
 
+import asyncio
 import csv
 import json
 import logging
@@ -19,6 +20,64 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from config import OPENAI_API_KEY
+
+# Workaround: nest_asyncio 1.6.0 + Python 3.14 incompatibility.
+import sniffio as _sniffio
+import sniffio._impl as _sniffio_impl
+
+def _sniffio_asyncio_patch() -> str:
+    try:
+        asyncio.get_running_loop()
+        return "asyncio"
+    except RuntimeError:
+        pass
+    raise _sniffio_impl.AsyncLibraryNotFoundError("unknown async library, or not in async context")
+
+_sniffio.current_async_library = _sniffio_impl.current_async_library = _sniffio_asyncio_patch
+
+import anyio._backends._asyncio as _anyio_asyncio
+
+_orig_cs_enter = _anyio_asyncio.CancelScope.__enter__
+_orig_cs_exit = _anyio_asyncio.CancelScope.__exit__
+
+def _cs_enter_patched(self: "object") -> "object":
+    if asyncio.current_task() is None:
+        self._active = True  # type: ignore[attr-defined]
+        self._host_task = None  # type: ignore[attr-defined]
+        return self
+    return _orig_cs_enter(self)  # type: ignore[arg-type]
+
+def _cs_exit_patched(self: "object", exc_type: "object", exc_val: "object", exc_tb: "object") -> bool:
+    if getattr(self, "_host_task", None) is None and not getattr(self, "_tasks", None):
+        self._active = False  # type: ignore[attr-defined]
+        return False
+    return _orig_cs_exit(self, exc_type, exc_val, exc_tb)  # type: ignore[arg-type]
+
+_anyio_asyncio.CancelScope.__enter__ = _cs_enter_patched  # type: ignore[method-assign]
+_anyio_asyncio.CancelScope.__exit__ = _cs_exit_patched  # type: ignore[method-assign]
+
+# Fix 3: patch asyncio.timeouts.Timeout — Python 3.14 requires current_task() != None
+# but nest_asyncio tasks have current_task() == None.
+import asyncio.timeouts as _timeouts
+
+_orig_timeout_enter = _timeouts.Timeout.__aenter__
+_orig_timeout_exit = _timeouts.Timeout.__aexit__
+
+async def _timeout_enter_patched(self: "object") -> "object":
+    if asyncio.current_task() is None:
+        self._state = _timeouts._State.ENTERED  # type: ignore[attr-defined]
+        self._task = None  # type: ignore[attr-defined]
+        return self
+    return await _orig_timeout_enter(self)  # type: ignore[arg-type]
+
+async def _timeout_exit_patched(self: "object", exc_type: "object", exc_val: "object", exc_tb: "object") -> bool:
+    if getattr(self, "_task", None) is None:
+        self._state = _timeouts._State.EXITED  # type: ignore[attr-defined]
+        return False
+    return await _orig_timeout_exit(self, exc_type, exc_val, exc_tb)  # type: ignore[arg-type]
+
+_timeouts.Timeout.__aenter__ = _timeout_enter_patched  # type: ignore[method-assign]
+_timeouts.Timeout.__aexit__ = _timeout_exit_patched  # type: ignore[method-assign]
 
 logging.basicConfig(
     level=logging.INFO,
@@ -46,7 +105,7 @@ METRICS = list(SLOS.keys())
 
 
 def load_testset(path: Path = TESTSET_CSV) -> list[dict]:
-    """Load testset_v1.csv → list of {question, ground_truth, contexts}."""
+    """Load testset_v1.csv -> list of {question, ground_truth, contexts}."""
     rows: list[dict] = []
     with open(path, newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -143,12 +202,13 @@ def run_ragas(
     answer_relevancy.llm = llm  # type: ignore[attr-defined]
     answer_relevancy.embeddings = emb  # type: ignore[attr-defined]
 
+    # ragas 0.3.x uses renamed columns
     dataset = Dataset.from_dict(
         {
-            "question": questions,
-            "answer": answers,
-            "contexts": all_contexts,
-            "ground_truth": ground_truths,
+            "user_input": questions,
+            "response": answers,
+            "retrieved_contexts": all_contexts,
+            "reference": ground_truths,
         }
     )
 
@@ -171,13 +231,14 @@ def run_ragas(
         except (TypeError, ValueError):
             return 0.0
 
+    # ragas 0.3.x renames columns: user_input/response/retrieved_contexts/reference
     per_question: list[dict] = []
     for _, row in df.iterrows():
         per_question.append(
             {
-                "question": str(row.get("question", "")),
-                "ground_truth": str(row.get("ground_truth", "")),
-                "answer": str(row.get("answer", "")),
+                "question": str(row.get("user_input", row.get("question", ""))),
+                "ground_truth": str(row.get("reference", row.get("ground_truth", ""))),
+                "answer": str(row.get("response", row.get("answer", ""))),
                 "faithfulness": _safe_float(row.get("faithfulness")),
                 "answer_relevancy": _safe_float(row.get("answer_relevancy")),
                 "context_precision": _safe_float(row.get("context_precision")),
@@ -206,7 +267,7 @@ def save_results(per_question: list[dict], path: Path = RESULTS_CSV) -> None:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(per_question)
-    logger.info("Per-question results → %s", path)
+    logger.info("Per-question results -> %s", path)
 
 
 def save_summary(summary: dict, per_question: list[dict], path: Path = SUMMARY_JSON) -> None:
@@ -219,7 +280,7 @@ def save_summary(summary: dict, per_question: list[dict], path: Path = SUMMARY_J
     }
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-    logger.info("Summary → %s", path)
+    logger.info("Summary -> %s", path)
 
 
 def _top_failures(per_question: list[dict], n: int = 10) -> list[dict]:
@@ -248,7 +309,7 @@ def print_report(summary: dict) -> None:
         score = summary[m]
         threshold = SLOS[m]
         status = "PASS" if score >= threshold else "FAIL"
-        logger.info("  [%s] %-22s %.4f  (SLO ≥ %.2f)", status, m, score, threshold)
+        logger.info("  [%s] %-22s %.4f  (SLO >= %.2f)", status, m, score, threshold)
     logger.info("=" * 55)
 
 
