@@ -132,3 +132,4 @@ Nội dung video (5 phút):
 | C — Topic validator | gpt-4o-mini | ~120 | ~$0.XX |
 | C — Llama Guard | Groq (free) | ~120 | $0.00 |
 | **Total** | | | **~$X.XX** |
+# Lab24_TranMinhToan_2A202600297
