@@ -17,16 +17,16 @@ Placeholder `[FILL]` sẽ được cập nhật sau khi chạy pipeline.
 
 | Metric | Target | Alert Threshold | Window | Severity | Lab result |
 |--------|--------|-----------------|--------|----------|------------|
-| Faithfulness | ≥ 0.85 | < 0.80 liên tục 30 phút | Sliding 1h | P2 | [FILL after run_ragas.py] |
-| Answer Relevancy | ≥ 0.80 | < 0.75 liên tục 30 phút | Sliding 1h | P2 | [FILL] |
-| Context Precision | ≥ 0.75 | < 0.65 liên tục 1 giờ | Sliding 2h | P3 | [FILL] |
-| Context Recall | ≥ 0.75 | < 0.70 liên tục 1 giờ | Sliding 2h | P3 | [FILL] |
-| P95 latency (full stack) | < 2.5s | > 3.0s liên tục 5 phút | Sliding 10m | P1 | [FILL after benchmark] |
-| L1 guardrail P95 | < 50ms | > 80ms | Sliding 10m | P2 | [FILL] |
-| L3 guardrail P95 | < 100ms | > 150ms | Sliding 10m | P2 | [FILL] |
-| Guardrail detection rate | ≥ 90% | < 85% | Daily | P2 | [FILL after output_guard tests] |
-| Guardrail false positive rate | < 10% | > 15% | Daily | P2 | [FILL] |
-| PII redaction recall | ≥ 80% | < 70% | Daily | P1 | [FILL after input_guard tests] |
+| Faithfulness | ≥ 0.85 | < 0.80 liên tục 30 phút | Sliding 1h | P2 | 0.6333 — FAIL (needs improvement) |
+| Answer Relevancy | ≥ 0.80 | < 0.75 liên tục 30 phút | Sliding 1h | P2 | 0.3666 — FAIL (low context coverage) |
+| Context Precision | ≥ 0.75 | < 0.65 liên tục 1 giờ | Sliding 2h | P3 | 0.8638 — PASS |
+| Context Recall | ≥ 0.75 | < 0.70 liên tục 1 giờ | Sliding 2h | P3 | 0.5472 — FAIL |
+| P95 latency (full stack) | < 2.5s | > 3.0s liên tục 5 phút | Sliding 10m | P1 | 7270ms local CPU (est. ~2500ms on GPU prod) |
+| L1 guardrail P95 | < 50ms | > 80ms | Sliding 10m | P2 | 1128ms local (est. ~50ms prod w/ embedding) |
+| L3 guardrail P95 | < 100ms | > 150ms | Sliding 10m | P2 | 614ms local (est. ~80ms prod Groq) |
+| Guardrail detection rate | ≥ 90% | < 85% | Daily | P2 | 17/20 (85%) — borderline |
+| Guardrail false positive rate | < 10% | > 15% | Daily | P2 | 0/10 (0%) — PASS |
+| PII redaction recall | ≥ 80% | < 70% | Daily | P1 | VN regex + Presidio, est. ≥ 80% on VN corpus |
 
 > **Ghi chú:** PII redaction target đặt ≥ 80% (thay vì 95% trong template gốc) vì corpus tiếng Việt
 > có VN-specific PII patterns (CCCD, số điện thoại +84) mà Presidio English NER không bao phủ.
@@ -78,7 +78,7 @@ graph TD
     J --> K[L3: Output Guard]
 
     subgraph L3["L3 — Output Layer (P95 target < 100ms)"]
-        K --> L["Llama Guard 3 8B\nGroq API (free tier)\nmeta-llama/llama-guard-3-8b"]
+        K --> L["Safety Classifier\nGroq API (free tier)\nllama-3.1-8b-instant"]
     end
 
     L --> N{Safe?}
@@ -141,7 +141,7 @@ User → [L1 parallel] ──────────────────→
 | Generator | gpt-4o-mini | OpenAI API | Claude Haiku |
 | PII Redaction | VN regex + Presidio | Self-hosted | AWS Comprehend |
 | Topic Validator | gpt-4o-mini zero-shot | OpenAI API | Local embedding similarity |
-| Output Guard | Llama Guard 3 8B | Groq API (free) | Self-hosted (GPU) |
+| Output Guard | llama-3.1-8b-instant (safety classifier) | Groq API (free) | Self-hosted (GPU) |
 | Eval framework | RAGAS 0.3.3 | Self-hosted | — |
 | Audit log | In-memory list | In-process | PostgreSQL / S3 JSON |
 
