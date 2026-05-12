@@ -1,0 +1,87 @@
+question_id,question,answer_a,answer_b,run1_winner,run2_winner,winner_after_swap
+1,Bên Xử lý dữ liệu cá nhân là gì và có vai trò như thế nào trong việc bảo vệ dữ liệu cá nhân?,"Bên Xử lý dữ liệu cá nhân là tổ chức, cá nhân thực hiện việc xử lý dữ liệu thay mặt cho Bên Kiểm soát dữ liệu, thông qua một hợp đồng hoặc thỏa thuận với Bên Kiểm soát dữ liệu. Vai trò của Bên Xử lý dữ liệu cá nhân trong việc bảo vệ dữ liệu cá nhân bao gồm việc lập và lưu giữ Hồ sơ đánh giá tác động xử lý dữ liệu cá nhân, nhằm đảm bảo việc xử lý dữ liệu được thực hiện đúng quy định và bảo vệ quyền lợi của chủ thể dữ liệu.","Bên Xử lý dữ liệu cá nhân là tổ chức, cá nhân thực hiện việc xử lý dữ liệu thay mặt cho Bên Kiểm soát dữ liệu, thông qua một hợp đồng hoặc thỏa thuận với Bên Kiểm soát dữ liệu. Vai trò của Bên Xử lý dữ liệu cá nhân trong việc bảo vệ dữ liệu cá nhân bao gồm việc lập và lưu giữ Hồ sơ đánh giá tác động xử lý dữ liệu cá nhân, cũng như có trách nhiệm chứng minh các trường hợp liên quan đến việc bảo vệ tính mạng, sức khỏe của chủ thể dữ liệu hoặc người khác.",A,A,A
+2,Quốc tịch là gì trong dữ liệu cá nhân và nó có vai trò gì trong việc xác định một con người cụ thể?,Không tìm thấy.,Không tìm thấy.,tie,tie,tie
+3,Dữ liệu cá nhân là gì và nó bao gồm những thông tin nào?,"Dữ liệu cá nhân là thông tin giúp xác định một con người cụ thể, bao gồm dữ liệu cá nhân cơ bản và dữ liệu cá nhân nhạy cảm.","Dữ liệu cá nhân là thông tin giúp xác định một con người cụ thể, bao gồm dữ liệu cá nhân cơ bản và dữ liệu cá nhân nhạy cảm.",tie,tie,tie
+4,Giới tính là gì trong dữ liệu cá nhân?,Không tìm thấy.,Không tìm thấy.,tie,tie,tie
+5,Cộng hòa xã hội chủ nghĩa Việt Nam có quy định gì về bảo vệ dữ liệu cá nhân?,"Cộng hòa xã hội chủ nghĩa Việt Nam có quy định về bảo vệ dữ liệu cá nhân thông qua việc xây dựng cơ chế hợp tác quốc tế để thực thi pháp luật về bảo vệ dữ liệu cá nhân, cũng như quy định xử lý dữ liệu cá nhân nhằm bảo vệ an ninh quốc gia, trật tự an toàn xã hội, và quyền lợi hợp pháp của tổ chức, cá nhân.","Cộng hòa xã hội chủ nghĩa Việt Nam có quy định về bảo vệ dữ liệu cá nhân thông qua việc xây dựng cơ chế hợp tác quốc tế để thực thi pháp luật về bảo vệ dữ liệu cá nhân, xử lý dữ liệu cá nhân nhằm bảo vệ an ninh quốc gia, trật tự an toàn xã hội, và quyền lợi hợp pháp của tổ chức, cá nhân. Ngoài ra, có các quy định liên quan đến việc chuyển dữ liệu ra nước ngoài và xử lý dữ liệu cá nhân của công dân Việt Nam.",B,tie,tie
+6,What are the key principles outlined in Điều 3 regarding the protection of personal data?,"Các nguyên tắc chính được nêu trong Điều 3 về bảo vệ dữ liệu cá nhân bao gồm:
+
+1. Dữ liệu cá nhân được xử lý theo quy định của pháp luật.
+2. Chủ thể dữ liệu được biết về hoạt động liên quan tới xử lý dữ liệu cá nhân của mình, trừ trường hợp luật có quy định khác.
+3. Dữ liệu cá nhân chỉ được xử lý đúng với mục đích đã được các bên liên quan đăng ký và tuyên bố.","Các nguyên tắc chính được nêu trong Điều 3 về bảo vệ dữ liệu cá nhân bao gồm:
+
+1. Dữ liệu cá nhân được xử lý theo quy định của pháp luật.
+2. Chủ thể dữ liệu được biết về hoạt động liên quan tới xử lý dữ liệu cá nhân của mình, trừ trường hợp luật có quy định khác.
+3. Dữ liệu cá nhân chỉ được xử lý đúng với mục đích đã được các bên liên quan đăng ký và tuyên bố.
+4. Sự đồng ý của chủ thể dữ liệu phải được thể hiện rõ ràng, cụ thể bằng văn bản hoặc các hình thức khác.
+5. Sự đồng ý phải được Kiểm soát và xử lý dữ liệu cá nhân trong trường hợp chủ thể dữ liệu đã biết rõ và đồng ý.",A,B,tie
+7,What actions are prohibited under Điều 8 regarding personal data processing?,Không tìm thấy.,Không tìm thấy.,tie,tie,tie
+8,Điều 8 nói về cái gì trong bảo vệ dữ liệu cá nhân?,"Điều 8 nói về các hành vi bị nghiêm cấm trong bảo vệ dữ liệu cá nhân, bao gồm việc xử lý dữ liệu cá nhân trái với quy định của pháp luật và xử lý dữ liệu cá nhân để tạo ra thông tin nhằm chống lại nhà nước có thẩm quyền.","Điều 8 nói về các hành vi bị nghiêm cấm trong bảo vệ dữ liệu cá nhân, bao gồm việc xử lý dữ liệu cá nhân trái với quy định của pháp luật và xử lý dữ liệu cá nhân để tạo ra thông tin nhằm chống lại nhà nước có thẩm quyền.",tie,tie,tie
+9,What are the responsibilities of Bên Kiểm soát dữ liệu cá nhân in relation to the rights of data subjects?,"Bên Kiểm soát dữ liệu cá nhân có trách nhiệm thực hiện yêu cầu cung cấp dữ liệu cá nhân của chủ thể dữ liệu trong 72 giờ sau khi nhận được yêu cầu, trừ trường hợp luật có quy định khác.","Bên Kiểm soát dữ liệu cá nhân có trách nhiệm thực hiện yêu cầu cung cấp dữ liệu cá nhân của chủ thể dữ liệu trong 72 giờ sau khi nhận được yêu cầu, trừ trường hợp luật có quy định khác. Họ cũng phải thông báo rõ ràng việc không thể cung cấp dữ liệu cá nhân nếu có lý do. Ngoài ra, Bên Kiểm soát dữ liệu cá nhân phải cung cấp thông tin về tổ chức và nhân viên bảo vệ dữ liệu cá nhân cho chủ thể dữ liệu.",B,B,B
+10,Nghị định này quy định những quyền gì của chủ thể dữ liệu?,"Nghị định này quy định các quyền sau của chủ thể dữ liệu:
+
+1. Quyền được biết về hoạt động xử lý dữ liệu cá nhân của mình.
+2. Quyền đồng ý.
+3. Quyền tự bảo vệ.
+4. Quyền yêu cầu bồi thường thiệt hại khi xảy ra vi phạm quy định về bảo vệ dữ liệu cá nhân.","Nghị định này quy định các quyền của chủ thể dữ liệu như sau:
+
+1. Quyền được biết về hoạt động xử lý dữ liệu cá nhân.
+2. Quyền đồng ý.
+3. Quyền rút lại sự đồng ý.
+4. Quyền xóa dữ liệu.
+5. Quyền yêu cầu bồi thường thiệt hại.
+6. Quyền khiếu nại, tố cáo, khởi kiện.",B,B,B
+11,How does the Bộ luật Dân sự relate to the rights and obligations of data subjects in the context of personal data protection?,Không tìm thấy.,"Bộ luật Dân sự quy định quyền tự bảo vệ của chủ thể dữ liệu, cho phép họ tự bảo vệ dữ liệu cá nhân của mình và yêu cầu các tổ chức, cá nhân khác bảo vệ dữ liệu đó. Ngoài ra, thông qua việc ủy quyền, tổ chức, cá nhân có thể thay mặt chủ thể dữ liệu thực hiện các thủ tục liên quan đến xử lý dữ liệu cá nhân. Quyền và nghĩa vụ này được quy định nhằm đảm bảo sự bảo vệ quyền dân sự của chủ thể dữ liệu.",B,B,B
+12,What are the rights and obligations of the data subject as outlined in the context regarding Bên Kiểm soát dữ liệu cá nhân?,Không tìm thấy.,Không tìm thấy.,tie,tie,tie
+13,Điều 13 nói về cái gì trong việc thông báo xử lý dữ liệu cá nhân?,"Điều 13 nói về việc thông báo cho chủ thể dữ liệu về xử lý dữ liệu cá nhân, bao gồm mục đích xử lý, loại dữ liệu cá nhân, và thông tin liên quan đến việc cung cấp dữ liệu cá nhân như thời hạn, địa điểm, hình thức cung cấp và chi phí thực tế.","Điều 13 nói về việc thông báo cho chủ thể dữ liệu về xử lý dữ liệu cá nhân, bao gồm các nội dung như mục đích xử lý, loại dữ liệu cá nhân, và thông tin liên quan đến việc cung cấp dữ liệu cá nhân.",A,A,A
+14,What are the key requirements outlined in Điều 13 regarding the notification of personal data processing?,"Các yêu cầu chính được nêu trong Điều 13 về thông báo xử lý dữ liệu cá nhân bao gồm:
+
+1. Việc thông báo phải được thực hiện một lần trước khi tiến hành hoạt động xử lý dữ liệu cá nhân.
+2. Nội dung thông báo cho chủ thể dữ liệu về xử lý dữ liệu cá nhân phải bao gồm:
+   a) Mục đích xử lý;
+   b) Loại dữ liệu cá nhân;
+   c) Thời hạn, địa điểm, hình thức cung cấp dữ liệu cá nhân;
+   d) Chi phí thực tế để in, sao, chụp, gửi thông tin qua dịch vụ bưu chính.","Điều 13 quy định các yêu cầu chính về thông báo xử lý dữ liệu cá nhân như sau:
+
+1. Việc thông báo phải được thực hiện một lần trước khi tiến hành hoạt động xử lý dữ liệu cá nhân.
+2. Nội dung thông báo cho chủ thể dữ liệu bao gồm:
+   a) Mục đích xử lý;
+   b) Loại dữ liệu cá nhân;
+   c) Thời hạn, địa điểm, hình thức cung cấp dữ liệu cá nhân;
+   d) Chi phí thực tế để in, sao, chụp, gửi thông tin qua dịch vụ bưu chính.",tie,tie,tie
+15,Bên Kiểm soát dữ liệu cá nhân có trách nhiệm gì?,"Bên Kiểm soát dữ liệu cá nhân có trách nhiệm tiếp nhận yêu cầu cung cấp dữ liệu cá nhân, theo dõi quá trình cung cấp dữ liệu, và bảo đảm các quyền của chủ thể dữ liệu theo quy định. Họ cũng chịu trách nhiệm trước chủ thể dữ liệu về các thiệt hại do quá trình xử lý dữ liệu cá nhân.","Bên Kiểm soát dữ liệu cá nhân có trách nhiệm tiếp nhận yêu cầu cung cấp dữ liệu cá nhân, theo dõi quá trình cung cấp dữ liệu, bảo đảm các quyền của chủ thể dữ liệu, và chịu trách nhiệm trước chủ thể dữ liệu về các thiệt hại do quá trình xử lý dữ liệu cá nhân. Trong trường hợp có tranh chấp, trách nhiệm chứng minh sự đồng ý của chủ thể dữ liệu cũng thuộc về Bên Kiểm soát dữ liệu cá nhân.",A,B,tie
+16,Điều 13 nói gì về thông báo xử lý dữ liệu cá nhân?,"Điều 13 quy định rằng việc thông báo xử lý dữ liệu cá nhân được thực hiện một lần trước khi tiến hành hoạt động xử lý. Nội dung thông báo cho chủ thể dữ liệu bao gồm mục đích xử lý, loại dữ liệu cá nhân, bên kiểm soát dữ liệu cá nhân, bên xử lý dữ liệu cá nhân, và bên kiểm soát và xử lý dữ liệu cá nhân được phép xử lý dữ liệu cá nhân.","Điều 13 quy định rằng việc thông báo xử lý dữ liệu cá nhân được thực hiện một lần trước khi tiến hành hoạt động xử lý dữ liệu cá nhân. Nội dung thông báo cho chủ thể dữ liệu bao gồm mục đích xử lý, loại dữ liệu cá nhân, và thông tin về Bên Kiểm soát dữ liệu cá nhân, Bên Xử lý dữ liệu cá nhân, cũng như các bên liên quan khác được phép xử lý dữ liệu cá nhân.",A,B,tie
+17,Phiếu yêu cầu cung cấp dữ liệu cá nhân là gì và ai có trách nhiệm hướng dẫn điền?,"Phiếu yêu cầu cung cấp dữ liệu cá nhân là tài liệu mà tổ chức, cá nhân sử dụng để yêu cầu cung cấp thông tin cá nhân. Người tiếp nhận yêu cầu có trách nhiệm hướng dẫn tổ chức, cá nhân điền các nội dung vào Phiếu yêu cầu cung cấp dữ liệu cá nhân.","Phiếu yêu cầu cung cấp dữ liệu cá nhân là mẫu đơn được sử dụng để yêu cầu cung cấp thông tin cá nhân. Người tiếp nhận yêu cầu có trách nhiệm hướng dẫn tổ chức, cá nhân điền các nội dung vào Phiếu yêu cầu cung cấp dữ liệu cá nhân.",A,B,tie
+18,Tại sao việc cung cấp dữ liệu cá nhân phải được thực hiện bằng tiếng Việt?,Không tìm thấy.,Không tìm thấy.,tie,tie,tie
+19,Cái gì là yêu cầu cung cấp dữ liệu cá nhân phải được thể hiện bằng tiếng Việt?,"Yêu cầu cung cấp dữ liệu cá nhân phải được thể hiện bằng tiếng Việt gồm các nội dung chính như họ, tên; nơi cư trú, địa chỉ; số chứng minh nhân dân, thẻ căn cước công dân hoặc số hộ chiếu của người yêu cầu; số fax, điện thoại, địa chỉ thư điện tử (nếu có).","Yêu cầu cung cấp dữ liệu cá nhân phải được thể hiện bằng tiếng Việt gồm các nội dung chính như họ, tên; nơi cư trú, địa chỉ; số chứng minh nhân dân, thẻ căn cước công dân hoặc số hộ chiếu của người yêu cầu; số fax, điện thoại, địa chỉ thư điện tử (nếu có); dữ liệu cá nhân được yêu cầu cung cấp; và các thông tin khác theo quy định.",A,B,tie
+20,Bên Kiểm soát dữ liệu cá nhân có trách nhiệm gì khi nhận yêu cầu cung cấp dữ liệu cá nhân từ chủ thể dữ liệu?,"Bên Kiểm soát dữ liệu cá nhân có trách nhiệm tiếp nhận yêu cầu cung cấp dữ liệu cá nhân, theo dõi quá trình cung cấp dữ liệu và thực hiện việc cung cấp dữ liệu cá nhân trong 72 giờ sau khi có yêu cầu, trừ trường hợp luật có quy định khác.","Bên Kiểm soát dữ liệu cá nhân có trách nhiệm tiếp nhận yêu cầu cung cấp dữ liệu cá nhân, theo dõi quá trình cung cấp dữ liệu, thực hiện việc cung cấp dữ liệu cá nhân trong 72 giờ sau khi có yêu cầu, và thông báo rõ ràng nếu không thể cung cấp dữ liệu cá nhân.",B,A,tie
+21,What are the conditions under which the data subject can request the deletion of their personal data?,"Các điều kiện mà chủ thể dữ liệu có thể yêu cầu xóa dữ liệu cá nhân của họ bao gồm:
+
+a) Xử lý dữ liệu không đúng mục đích hoặc đã hoàn thành mục đích xử lý dữ liệu cá nhân được chủ thể dữ liệu đồng ý;
+
+b) Việc lưu trữ dữ liệu cá nhân không còn cần thiết với hoạt động của Bên Kiểm soát dữ liệu cá nhân, Bên Kiểm soát và xử lý dữ liệu cá nhân, Bên Xử lý dữ liệu cá nhân, Bên thứ ba;
+
+c) Bên Kiểm soát dữ liệu cá nhân, Bên Kiểm soát và xử lý dữ liệu cá nhân, Bên Xử lý dữ liệu cá nhân, Bên thứ ba bị giải thể hoặc không còn hoạt động.","Dữ liệu cá nhân có thể được yêu cầu xóa trong các trường hợp sau:
+
+a) Xử lý dữ liệu không đúng mục đích hoặc đã hoàn thành mục đích xử lý dữ liệu cá nhân được chủ thể dữ liệu đồng ý;
+
+b) Việc lưu trữ dữ liệu cá nhân không còn cần thiết với hoạt động của Bên Kiểm soát dữ liệu cá nhân, Bên Kiểm soát và xử lý dữ liệu cá nhân, Bên Xử lý dữ liệu cá nhân, Bên thứ ba;
+
+c) Bên Kiểm soát dữ liệu cá nhân, Bên Kiểm soát và xử lý dữ liệu cá nhân, Bên Xử lý dữ liệu cá nhân, Bên thứ ba bị giải thể hoặc không còn hoạt động.",tie,tie,tie
+22,Bên Xử lý dữ liệu cá nhân có trách nhiệm gì?,Bên Xử lý dữ liệu cá nhân chịu trách nhiệm trước chủ thể dữ liệu về các biện pháp bảo vệ dữ liệu cá nhân và các thiệt hại do quá trình xử lý dữ liệu.,Bên Xử lý dữ liệu cá nhân chịu trách nhiệm trước chủ thể dữ liệu về các biện pháp bảo vệ dữ liệu cá nhân và thực hiện đầy đủ các quy định về trách nhiệm xử lý dữ liệu cá nhân theo quy định tại Nghị định này.,B,B,B
+23,Chủ thể dữ liệu có quyền gì trong việc xử lý dữ liệu cá nhân?,"Chủ thể dữ liệu có quyền được biết về hoạt động xử lý dữ liệu cá nhân của mình, quyền đồng ý, quyền khiếu nại, tố cáo, khởi kiện, và quyền yêu cầu cung cấp dữ liệu cá nhân.","Chủ thể dữ liệu có các quyền sau trong việc xử lý dữ liệu cá nhân:
+
+1. Quyền được biết về hoạt động xử lý dữ liệu cá nhân của mình.
+2. Quyền đồng ý cho phép xử lý dữ liệu cá nhân.
+3. Quyền khiếu nại, tố cáo, khởi kiện.
+4. Quyền yêu cầu cung cấp dữ liệu cá nhân.
+5. Quyền yêu cầu hạn chế xử lý dữ liệu cá nhân của mình.",B,B,B
+24,Bên Xử lý dữ liệu cá nhân có trách nhiệm gì trong việc bảo vệ dữ liệu cá nhân?,"Bên Xử lý dữ liệu cá nhân có trách nhiệm bảo đảm các biện pháp bảo vệ phù hợp và chịu trách nhiệm trước chủ thể dữ liệu về việc bảo vệ tính mạng, sức khỏe của chủ thể dữ liệu hoặc người khác.",Bên Xử lý dữ liệu cá nhân có trách nhiệm bảo đảm các quyền của chủ thể dữ liệu theo quy định tại Điều 9 Nghị định này và chịu trách nhiệm trước chủ thể dữ liệu về các thiệt hại do quá trình xử lý dữ liệu cá nhân gây ra.,B,B,B
+25,Bộ Công an có vai trò gì trong việc thông báo vi phạm quy định về bảo vệ dữ liệu cá nhân?,"Bộ Công an (Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao) có vai trò nhận thông báo về vi phạm quy định bảo vệ dữ liệu cá nhân từ Bên Kiểm soát dữ liệu cá nhân và Bên Kiểm soát và xử lý dữ liệu cá nhân, đồng thời phối hợp xử lý hành vi vi phạm liên quan tới hoạt động bảo vệ dữ liệu cá nhân.",Bộ Công an có vai trò nhận thông báo từ Bên Kiểm soát dữ liệu cá nhân và Bên Kiểm soát và xử lý dữ liệu cá nhân khi phát hiện vi phạm quy định bảo vệ dữ liệu cá nhân. Họ cũng phối hợp với các bên này trong việc xử lý hành vi vi phạm và quyết định việc kiểm tra chuyển dữ liệu cá nhân ra nước ngoài.,B,A,tie
+26,Nghị định này quy định như thế nào về việc xử lý dữ liệu cá nhân của người đã chết hoặc mất tích?,"Nghị định này quy định rằng việc xử lý dữ liệu cá nhân của người bị tuyên bố mất tích hoặc đã chết phải được sự đồng ý của vợ, chồng hoặc con thành niên của người đó.","Nghị định này quy định rằng việc xử lý dữ liệu cá nhân liên quan đến người bị tuyên bố mất tích hoặc người đã chết phải được sự đồng ý của vợ, chồng hoặc con thành niên của người đó.",tie,tie,tie
+27,What is the significance of Nghị định in the context of personal data processing?,Không tìm thấy.,Không tìm thấy.,tie,tie,tie
+28,Bộ Công an có vai trò gì trong việc thông báo vi phạm quy định về bảo vệ dữ liệu cá nhân?,"Bộ Công an (Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao) có vai trò nhận thông báo về vi phạm quy định bảo vệ dữ liệu cá nhân từ Bên Kiểm soát dữ liệu cá nhân và Bên Kiểm soát và xử lý dữ liệu cá nhân trong vòng 72 giờ sau khi phát hiện vi phạm. Bộ Công an cũng phối hợp với các bên này để xử lý hành vi vi phạm liên quan tới hoạt động bảo vệ dữ liệu cá nhân.",Bộ Công an có vai trò nhận thông báo từ Bên Kiểm soát dữ liệu cá nhân và Bên Kiểm soát và xử lý dữ liệu cá nhân về các vi phạm quy định bảo vệ dữ liệu cá nhân. Họ cũng phối hợp trong việc xử lý các hành vi vi phạm liên quan đến hoạt động bảo vệ dữ liệu cá nhân.,A,A,A
+29,Việt Nam có quy định gì về việc chuyển dữ liệu cá nhân ra nước ngoài và đánh giá tác động xử lý dữ liệu cá nhân?,"Việt Nam có quy định về việc chuyển dữ liệu cá nhân ra nước ngoài tại Điều 25, trong đó yêu cầu Bên chuyển dữ liệu lập hồ sơ và cung cấp thông tin chi tiết về Bên chuyển và Bên tiếp nhận dữ liệu. Ngoài ra, Điều 24 quy định về việc đánh giá tác động xử lý dữ liệu cá nhân, yêu cầu Bên Kiểm soát dữ liệu lập và lưu giữ hồ sơ đánh giá.","Việt Nam có quy định về việc chuyển dữ liệu cá nhân ra nước ngoài tại Điều 25 của Nghị định, yêu cầu bên chuyển dữ liệu lập hồ sơ và cung cấp thông tin chi tiết về bên chuyển và bên tiếp nhận dữ liệu. Hồ sơ đánh giá tác động chuyển dữ liệu cá nhân ra nước ngoài phải có sẵn để phục vụ hoạt động kiểm tra của Bộ Công an. 
+
+Ngoài ra, Điều 24 quy định về việc đánh giá tác động xử lý dữ liệu cá nhân, yêu cầu bên kiểm soát dữ liệu lập và lưu giữ hồ sơ đánh giá. Bộ Công an có quyền yêu cầu ngừng chuyển dữ liệu cá nhân ra nước ngoài nếu phát hiện dữ liệu bị sử dụng vào hoạt động vi phạm.",B,B,B
+30,Cục An ninh mạng làm gì khi có vi phạm dữ liệu cá nhân?,"Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao sẽ được thông báo khi phát hiện vi phạm quy định bảo vệ dữ liệu cá nhân và sẽ phối hợp với các bên liên quan để xử lý hành vi vi phạm.","Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao thông báo cho Bộ Công an khi phát hiện vi phạm quy định bảo vệ dữ liệu cá nhân và phối hợp xử lý hành vi vi phạm.",B,B,B
