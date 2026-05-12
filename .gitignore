@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.csv
+*.json
+!test_set.json
+*.png
+*.mp4
+.DS_Store
